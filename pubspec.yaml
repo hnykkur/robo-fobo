@@ -1,0 +1,42 @@
+name: rsk_teleop
+description: "Flutter joystick teleop for Robot Soccer Kit over BLE."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.5.5
+  flutter_blue_plus: ^2.3.10
+  permission_handler: ^12.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/app_logo.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/images/app_logo.png
+  min_sdk_android: 21
+  # Match the logo’s green field for Android adaptive icons.
+  adaptive_icon_background: "#2E7D32"
+  adaptive_icon_foreground: assets/images/app_logo.png
+  web:
+    generate: true
+  windows:
+    generate: true
+  macos:
+    generate: true
