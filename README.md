@@ -2,6 +2,9 @@
 
 Flutter joystick controller for Robot Soccer Kit robots over **Bluetooth Low Energy** (Android + iOS). No Wi‑Fi / no router.
 
+- **Firmware (BLE):** https://github.com/vidarfg/robo-fobo-firmware  
+- **Original Robot Soccer Kit** (design + upstream firmware): https://github.com/robot-soccer-kit/robot-soccer-kit  
+
 ## Download (Android)
 
 Grab the latest **APK** from [Releases](https://github.com/vidarfg/robo-fobo/releases/latest).
@@ -17,7 +20,7 @@ flutter run
 
 ### Connecting
 
-1. Flash the shared BLE firmware to each robot.
+1. Flash the [BLE firmware](https://github.com/vidarfg/robo-fobo-firmware) to each robot.
 2. Set the robot number once over USB serial (`115200`): `robotid 1` … `robotid 4`  
    (reboots; advertises as **1-Ronaldo**, **2-Haaland**, **3-Messi**, **4-EidurSmari**).
 3. In the app **Settings**, tap **Scan & connect**, or pick the player name.
@@ -43,3 +46,7 @@ flutter build apk --release
 
 - **Android:** `BLUETOOTH_SCAN` / `BLUETOOTH_CONNECT` (and legacy BT + location on older APIs).
 - **iOS:** `NSBluetoothAlwaysUsageDescription` in `Info.plist`.
+
+## Credits
+
+Built for use with robots based on the [Robot Soccer Kit](https://github.com/robot-soccer-kit/robot-soccer-kit) open project.
