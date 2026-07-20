@@ -15,6 +15,20 @@ Flutter joystick controller for Robot Soccer Kit robots over **Bluetooth Low Ene
 - **Firmware (BLE):** https://github.com/vidarfg/robo-fobo-firmware  
 - **Original Robot Soccer Kit** (design + upstream firmware): https://github.com/robot-soccer-kit/robot-soccer-kit  
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/teleop.png" alt="Teleop — joysticks and kick" width="240" />
+  &nbsp;
+  <img src="docs/screenshots/settings_ble.png" alt="Settings — BLE robot select and status" width="240" />
+  &nbsp;
+  <img src="docs/screenshots/settings_leds.png" alt="Settings — LEDs and disco" width="240" />
+</p>
+
+| Teleop | BLE & status | LEDs |
+|--------|--------------|------|
+| Drive, kick, rotation | Pick robot, scan/connect, battery | Collar presets & disco |
+
 ## Download (Android)
 
 Grab the latest **APK** from [Releases](https://github.com/vidarfg/robo-fobo/releases/latest).
