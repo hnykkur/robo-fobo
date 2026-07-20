@@ -1,5 +1,15 @@
 # Róbó-Fóbó (RSK Teleop)
 
+## Présentation (FR)
+
+**Róbó-Fóbó** est une appli Flutter pour piloter les robots **Robot Soccer Kit** en **Bluetooth Low Energy** — pas besoin de Wi‑Fi ni de routeur.
+
+Chaque téléphone se connecte à **un** robot (`1-Ronaldo`, `2-Haaland`, `3-Messi`, `4-EidurSmari`). Le firmware BLE et les réglages (nom, couleur LED en NVS) sont ici : [robo-fobo-firmware](https://github.com/vidarfg/robo-fobo-firmware).
+
+Basé sur le kit ouvert : [robot-soccer-kit/robot-soccer-kit](https://github.com/robot-soccer-kit/robot-soccer-kit).
+
+---
+
 Flutter joystick controller for Robot Soccer Kit robots over **Bluetooth Low Energy** (Android + iOS). No Wi‑Fi / no router.
 
 - **Firmware (BLE):** https://github.com/vidarfg/robo-fobo-firmware  
