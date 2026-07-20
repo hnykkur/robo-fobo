@@ -4,7 +4,7 @@ Flutter joystick controller for Robot Soccer Kit robots over **Bluetooth Low Ene
 
 ## Download (Android)
 
-Grab the latest **APK** from [Releases](../../releases/latest).
+Grab the latest **APK** from [Releases](https://github.com/vidarfg/robo-fobo/releases/latest).
 
 On your phone: allow install from that source, then open the APK.
 
