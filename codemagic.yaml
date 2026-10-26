@@ -1,0 +1,60 @@
+# Codemagic — App Store release for Róbó-Fóbó.
+# Ordinary commits do not start a build. A tag v<pubspec version>
+# (for example v1.0.0+1) starts the workflow below.
+#
+# Same Codemagic team as Hanzi Tree. Setup once:
+# 1. Add application → GitHub → vidarfg/robo-fobo (Flutter).
+# 2. Team integrations already has the App Store Connect key
+#    HanziAutomateKey. Select that integration for this app.
+# 3. Teams → Code signing identities:
+#      The Apple Distribution certificate is already on the team.
+#      Fetch an App Store provisioning profile for is.hnykkur.robofobo.
+# 4. App Store Connect → create the app is.hnykkur.robofobo,
+#    name Róbó-Fóbó, and complete the version listing
+#    (description, screenshots, privacy, support URL).
+# 5. Scan for codemagic.yaml. Push a v* tag, or start this workflow
+#    by hand.
+#
+# The build uploads the IPA and submits it for App Store review.
+# After approval it is released automatically. The submit step fails
+# until the listing in step 4 is complete; the IPA is still uploaded.
+
+workflows:
+  ios-app-store:
+    name: iOS App Store
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "v*"
+          include: true
+      cancel_previous_builds: false
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: HanziAutomateKey
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: is.hnykkur.robofobo
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      - name: Set up code signing settings on Xcode project
+        script: xcode-project use-profiles
+      - name: Flutter build IPA
+        script: |
+          flutter build ipa --release \
+            --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_app_store: true
+        cancel_previous_submissions: true
+        release_type: AFTER_APPROVAL
