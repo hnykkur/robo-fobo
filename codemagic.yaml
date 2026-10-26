@@ -3,7 +3,7 @@
 # (for example v1.0.0+1) starts the workflow below.
 #
 # Same Codemagic team as Hanzi Tree. Setup once:
-# 1. Add application → GitHub → vidarfg/robo-fobo (Flutter).
+# 1. Add application → GitHub → hnykkur/robo-fobo (Flutter).
 # 2. Team integrations already has the App Store Connect key
 #    HanziAutomateKey. Select that integration for this app.
 # 3. Teams → Code signing identities:
